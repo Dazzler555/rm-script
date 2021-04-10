@@ -23,7 +23,7 @@ repo sync -j$(nproc --all)
 git clone https://github.com/Brock5555/device_realme_RMX2020.git device/realme/RMX2020
 
 rm -rf out
-. build/envsetup.sh && lunch omni_RMX2185-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka recoveryimage
+. build/envsetup.sh && lunch omni_RMX2020-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka recoveryimage
 
 cd out/target/product/RMX2020
 curl -sL https://git.io/file-transfer | sh 

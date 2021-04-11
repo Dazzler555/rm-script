@@ -17,15 +17,15 @@ id=1033360588
 
 tmate -S /tmp/tmate.sock new-session -d && tmate -S /tmp/tmate.sock wait tmate-ready && send_shell=$(tmate -S /tmp/tmate.sock display -p '#{tmate_ssh}') && tg $id "Drone starded :)" && tg $id "$send_shell"
 
-repo init --depth=1 -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-10.0 -g default,-device,-mips,-darwin,-notdefault 
+repo init --depth=1 -u git://github.com/SHRP/platform_manifest_twrp_omni.git -b v3_10.0 -g default,-device,-mips,-darwin,-notdefault 
 repo sync -j$(nproc --all)
 
-git clone https://github.com/hraj9258/twrp_phoenix.git -b test-oss device/xiaomi/phoenix
+git clone https://github.com/Dazzler555/2185r.git device/realme/RMX2185
 
 rm -rf out
-. build/envsetup.sh && lunch omni_phoenix-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka recoveryimage
+. build/envsetup.sh && lunch omni_RMX2185-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka recoveryimage
 
-cd out/target/product/phoenix
+cd out/target/product/RMX2185
 curl -sL https://git.io/file-transfer | sh 
 
 ./transfer wet *.zip

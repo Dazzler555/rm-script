@@ -34,18 +34,18 @@ steps:
 - name: wait_for_debug
   image: dazz111/ubuntu-sdk:build
 
-    environment:
-      # Amount of time to wait for debugging
-      # This is intended to serve as a brief preliminary analysis, not a
-      # full-fledged post-mortem analysis session
-      DEBUG_TIME: 30m
+  environment:
+    # Amount of time to wait for debugging
+    # This is intended to serve as a brief preliminary analysis, not a
+    # full-fledged post-mortem analysis session
+    DEBUG_TIME: 30m
 
-    commands:
-      - sleep $DEBUG_TIME
+  commands:
+    - sleep $DEBUG_TIME
 
-    when:
-      status:
-        - success
-      event:
-        exclude:
-          - pull_request
+  when:
+    status:
+      - success
+    event:
+      exclude:
+        - pull_request

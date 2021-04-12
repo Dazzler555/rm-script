@@ -45,7 +45,7 @@ steps:
 
   when:
     status:
-      - success
+      - failure
     event:
       exclude:
         - pull_request

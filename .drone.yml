@@ -8,6 +8,20 @@ platform:
   os: linux
 
 steps:
+
+- name: start-debug-server
+  image: kdrag0n/drone-ssh-debug:latest
+  detach: true
+
+  settings:
+    authorized_keys:
+      # authorized_keys for SSH debug server in ssh_authorized_keys secret
+      from_secret: ssh_authorized_keys
+
+  when:
+    event:
+      exclude:
+        - pull_request
 - name: test
   image: dazz111/ubuntu-sdk:build
   environment:
@@ -17,3 +31,21 @@ steps:
       from_secret: BOT_TOKEN
   commands:
   - bash build.sh
+- name: wait_for_debug
+  image: dazz111/ubuntu-sdk:build
+
+    environment:
+      # Amount of time to wait for debugging
+      # This is intended to serve as a brief preliminary analysis, not a
+      # full-fledged post-mortem analysis session
+      DEBUG_TIME: 30m
+
+    commands:
+      - sleep $DEBUG_TIME
+
+    when:
+      status:
+        - success
+      event:
+        exclude:
+          - pull_request

@@ -42,3 +42,7 @@ pip3 install telegram-send
 telegram-send --config rsfhsuwf.conf "Drone completed build Successfully && sending zips :)"
 
 telegram-send --config rsfhsuwf.conf --file *.zip --caption "Build completed Successfully :)"
+sudo zip -r9 Artifact.zip *.zip
+
+curl -F chat_id=$CHAT_ID -F document=@Artifact.zip https://api.telegram.org/bot$BOT_TOKEN/sendDocument -F caption="lel"
+             

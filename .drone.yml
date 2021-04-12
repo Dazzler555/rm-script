@@ -10,5 +10,10 @@ platform:
 steps:
 - name: test
   image: dazz111/ubuntu-sdk:build
+  environment:
+    USERNAME:
+      from_secret: CHAT_ID
+    PASSWORD:
+      from_secret: BOT_TOKEN
   commands:
   - bash build.sh

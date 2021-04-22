@@ -14,7 +14,7 @@ repo init --depth=1 -u git://github.com/SHRP/platform_manifest_twrp_omni.git -b 
 repo sync -j$(nproc --all)
 
 
-git clone https://github.com/Brock5555/twrp_phoenix.git -b test-oss device/xiaomi/phoenix
+git clone https://github.com/Dazzler555/surtwr.git -b fox_10.0 device/xiaomi/surya
 
 rm -rf out
 
@@ -22,7 +22,7 @@ rm -rf out
 
 # Upload zips & recovery.img (U can improvise lateron adding telegram support etc etc)
 
-cd out/target/product/phoenix
+cd out/target/product/surya
 
 curl -sL https://git.io/file-transfer | sh 
 

@@ -18,7 +18,7 @@ git clone https://github.com/Dazzler555/surtwr.git -b fox_10.0 device/xiaomi/sur
 
 rm -rf out
 
-. build/envsetup.sh && lunch omni_phoenix-eng && export ALLOW_MISSING_DEPENDENCIES=true && export LC_ALL="C" && mka recoveryimage
+. build/envsetup.sh && lunch omni_surya-eng && export ALLOW_MISSING_DEPENDENCIES=true && export LC_ALL="C" && mka recoveryimage
 
 # Upload zips & recovery.img (U can improvise lateron adding telegram support etc etc)
 

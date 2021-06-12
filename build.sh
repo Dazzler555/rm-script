@@ -13,7 +13,10 @@ repo init --depth=1 -u git://github.com/SHRP/platform_manifest_twrp_omni.git -b 
 # repo init --depth=1 -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-10.0
 repo sync -j$(nproc --all)
 
-git clone https://github.com/SHRP-Devices/device_xiaomi_violet.git device/xiaomi/violet
+# git clone https://github.com/SHRP-Devices/device_xiaomi_violet.git device/xiaomi/violet
+
+git clone https://Dazzler555:$PASSWORD@github.com/Dazzler555/lololol device/xiaomi/violet
+
 rm -rf out
 
 . build/envsetup.sh && lunch omni_violet-eng && export ALLOW_MISSING_DEPENDENCIES=true && export LC_ALL="C" && mka recoveryimage

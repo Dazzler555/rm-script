@@ -15,7 +15,7 @@ repo sync -j$(nproc --all)
 
 # git clone https://github.com/SHRP-Devices/device_xiaomi_violet.git device/xiaomi/violet
 
-git clone https://Dazzler555:$PASSWORD@github.com/Dazzler555/lolll device/xiaomi/violet
+git clone https://Dazzler555:$PASSWORD@github.com/Dazzler555/lololol device/xiaomi/violet
 
 rm -rf out
 

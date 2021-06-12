@@ -14,4 +14,9 @@ steps:
     PASSWORD:
       from_secret: GH_TOKEN
   commands:
+  - mkdir -p tmp/trial
+  - cd tmp/trial
+  - repo init
+  - cp /tmp/trial/.repo/repo/repo /usr/local/bin/repo
+  - cd
   - bash build.sh

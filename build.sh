@@ -9,7 +9,7 @@ cd /tmp/recovery
 sudo apt install git -y
 
 repo init --depth=1 -u git://github.com/SHRP/platform_manifest_twrp_omni.git -b v3_9.0 -g default,-device,-mips,-darwin,-notdefault
-
+cp /tmp/recovery/.repo/repo/repo /usr/local/bin/repo
 # repo init --depth=1 -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-10.0
 repo sync -j$(nproc --all)
 

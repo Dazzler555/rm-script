@@ -16,7 +16,7 @@ steps:
   commands:
   - mkdir -p tmp/trial
   - cd tmp/trial
-  - repo init
+  - repo init --depth=1 -u git://github.com/SHRP/platform_manifest_twrp_omni.git -b v3_9.0 -g default,-device,-mips,-darwin,-notdefault
   - cp /tmp/trial/.repo/repo/repo /usr/local/bin/repo
   - cd
   - bash build.sh

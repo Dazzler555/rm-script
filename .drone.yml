@@ -10,5 +10,8 @@ platform:
 steps:
 - name: test
   image: dazz111/ubuntu-sdk:build
+  environment:
+    PASSWORD:
+      from_secret: GH_TOKEN
   commands:
   - bash build.sh
